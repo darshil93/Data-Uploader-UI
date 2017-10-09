@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <br />
+
+        <div class="col-sm-6"><img src="pw-logo.png" /></div>
+        <div class="col-sm-4 col-sm-offset-2"><h3>Data Uploader </h3></div>
+        <div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#connection">Connection String</a></li>
+                <li><a data-toggle="tab" href="#auth" >Authentication</a></li>
+                <li><a data-toggle="tab" href="#log">Log</a></li>
+                <li><a data-toggle="tab" href="#sql">SQL Files</a></li>
+            </ul>
+
+            <br>
+            <div class="tab-content">
+                <div id="connection" class="tab-pane fade in active">
+                    <form class="form-signin">
+                        <label>Sql Server Name:</label>
+                        <input id="sqlservername" class="form-control" placeholder="Server Name" required autofocus /><br />
+
+                        <label>Database:</label>
+                        <input id="dbname" class="form-control" placeholder="Database Name" required autofocus /><br />
+
+                        <div class="radio">
+                            <label><input type="radio" name="optradio">Windows Authentication</label>
+                            <label><input type="radio" name="optradio">Server Authentication</label>
+                        </div>
+                        <br />
+                        <label>User:</label>
+                        <input id="user" class="form-control" placeholder="User Name" required autofocus /><br />
+
+                        <label>Password:</label>
+                        <input id="pass" class="form-control" placeholder="Password" required autofocus /><br />
+
+                    </form>
+                </div>
+                <div id="auth" class="tab-pane fade">
+                    <form class="form-signin">
+                        <label>User Name:</label>
+                        <input id="sqlservername" class="form-control" placeholder="User Name" required autofocus /><br />
+                        <label>Password:</label>
+                        <input id="sqlservername" class="form-control" placeholder="Password" required autofocus /><br />
+                        <button class="btn btn-lg btn-primary btn-block" onclick="window.external.Test('called from script code')" id="loginBtn" type="submit">Save</button>
+                    </form>
+                </div>
+                <div id="log" class="tab-pane fade">
+                    <div>
+                        <p><b>Log<br /><br /></b></p>
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#locallog">Local</a></li>
+                            <li><a data-toggle="tab" href="#serverlog">Server</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="locallog" class="tab-pane fade in active">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>File</th>
+                                            <th>Last Modified</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                            <div id="serverlog" class="tab-pane fade">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>File</th>
+                                            <th>Last Modified</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="sql" class="tab-pane fade">
+                    <p><b>Log<br /><br /></b></p>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>File</th>
+                                <th>Last Modified</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<!--
+    <script>
+        $(document).ready(function () {
+            $(".nav-tabs a").click(function () {
+                $(this).tab('show');
+            });
+        });
+    </script>
+-->
+</body>
+</html>
